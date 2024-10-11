@@ -18,7 +18,7 @@ fn main() {
             .read_line(&mut guess)
             .expect("Falha ao ler a linha");
 
-        if guess == "q" {
+        if guess.trim() == "q" {
             println!("Saindo do programa!");
             break;
         }
