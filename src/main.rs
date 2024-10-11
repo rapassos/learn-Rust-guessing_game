@@ -18,7 +18,10 @@ fn main() {
             .read_line(&mut guess)
             .expect("Falha ao ler a linha");
 
-        let guess: u32 = guess.trim().parse().expect("Por favor, digite um número!");
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
         println!("Seu palpite é: {}", guess);
 
